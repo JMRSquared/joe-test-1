@@ -4,6 +4,7 @@ import {
   FooterSection,
   HeaderSection,
   HeroSection,
+  PricingSection,
   ShowcaseSection,
 } from './features/site-template';
 
@@ -14,6 +15,7 @@ export function App() {
       <HeroSection />
       <FeaturesSection />
       <ShowcaseSection />
+      <PricingSection />
       <CtaSection />
       <FooterSection />
     </div>
