@@ -5,7 +5,11 @@ import reactRefresh from 'eslint-plugin-react-refresh';
 import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
-  { ignores: ['dist', '.pnp.*', '.yarn/**'] },
+  { ignores: [
+    'dist', '.pnp.*', '.yarn/**',
+    'jest.config.cjs', 'jest.transform.cjs', 'jest.global-fix.cjs',
+    'jest.polyfills.js', 'jest.setup.js', '__mocks__/**',
+  ]},
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ['**/*.{ts,tsx}'],

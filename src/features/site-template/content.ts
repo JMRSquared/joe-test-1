@@ -40,6 +40,7 @@ export type ShowcaseStat = {
 export const navigationSections: NavigationSection[] = [
   { id: 'features', label: 'Features' },
   { id: 'showcase', label: 'Showcase' },
+  { id: 'pricing', label: 'Pricing' },
   { id: 'start', label: 'Start Here' },
 ];
 
@@ -129,4 +130,87 @@ export const ctaChecklist: string[] = [
   'Replace the starter copy with your brand voice',
   'Add photography, renders, or product visuals that fit the site direction',
   'Connect the final CTA to your real form, CRM, or booking flow',
+];
+
+// ── Pricing data ────────────────────────────────────────────────────────────
+
+export type BedProduct = {
+  name: string;
+  subtitle: string;
+  basePrice: number;
+  imageSeed: string;
+  tag?: string;
+  rating: number;
+  reviewCount: number;
+};
+
+export const pricingBeds: BedProduct[] = [
+  {
+    name: 'Luxe Platform Bed',
+    subtitle: 'Solid walnut, hand-oiled finish',
+    basePrice: 1299,
+    imageSeed: 'bed-luxe',
+    tag: 'Best Seller',
+    rating: 4.8,
+    reviewCount: 312,
+  },
+  {
+    name: 'Cloud drift Bed',
+    subtitle: 'Upholstered linen headboard, slatted base',
+    basePrice: 999,
+    imageSeed: 'bed-cloud',
+    tag: 'New',
+    rating: 4.6,
+    reviewCount: 187,
+  },
+  {
+    name: 'Heritage Sleigh Bed',
+    subtitle: 'Curved sleigh frame, dark oak',
+    basePrice: 1599,
+    imageSeed: 'bed-heritage',
+    rating: 4.9,
+    reviewCount: 228,
+  },
+  {
+    name: 'Nordic Frame Bed',
+    subtitle: 'Pine frame, minimalist Scandinavian lines',
+    basePrice: 799,
+    imageSeed: 'bed-nordic',
+    tag: 'Sale',
+    rating: 4.5,
+    reviewCount: 154,
+  },
+  {
+    name: 'Canopy Dream Bed',
+    subtitle: 'Four-post canopy, brushed steel hardware',
+    basePrice: 2199,
+    imageSeed: 'bed-canopy',
+    rating: 4.7,
+    reviewCount: 89,
+  },
+  {
+    name: 'Urban Loft Bed',
+    subtitle: 'Low-profile, engineered wood, matte black legs',
+    basePrice: 649,
+    imageSeed: 'bed-urban',
+    rating: 4.4,
+    reviewCount: 203,
+  },
+  {
+    name: 'Artisan Panel Bed',
+    subtitle: 'Hand-carved panel headboard, reclaimed teak',
+    basePrice: 1899,
+    imageSeed: 'bed-artisan',
+    rating: 4.8,
+    reviewCount: 71,
+  },
+  {
+    name: 'Breeze Storage Bed',
+    subtitle: 'Built-in drawers, white oak veneer',
+    basePrice: 1099,
+    imageSeed: 'bed-breeze',
+    tag: 'Popular',
+    rating: 4.6,
+    reviewCount: 265,
+  },
 ];

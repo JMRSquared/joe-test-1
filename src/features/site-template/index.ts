@@ -4,3 +4,4 @@ export { FeaturesSection } from './sections/FeaturesSection';
 export { ShowcaseSection } from './sections/ShowcaseSection';
 export { CtaSection } from './sections/CtaSection';
 export { FooterSection } from './sections/FooterSection';
+export { PricingSection } from './sections/PricingSection';
