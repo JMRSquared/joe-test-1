@@ -28,7 +28,7 @@ export function PricingSection() {
       {/* Hero parallax band */}
       <ParallaxBand background={BG_HERO} index={1}>
         <div className="px-6 py-20 text-center md:py-28">
-          <h3 className="mb-4 text-sm font-semibold uppercase tracking-widest text-zinc-400">Queen Beds</h3>
+          <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-zinc-400">Queen Beds</p>
           <h2 className="mx-auto max-w-3xl text-4xl font-bold text-white md:text-5xl">
             Find Your Perfect Night's Sleep
           </h2>
@@ -43,7 +43,7 @@ export function PricingSection() {
         <div className="mx-auto max-w-7xl">
           <motion.div
             ref={gridRef}
-            className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+            className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
             variants={gridVariants}
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}

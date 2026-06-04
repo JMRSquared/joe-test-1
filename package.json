@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "packageManager": "yarn@4.13.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,6 +12,13 @@
     "typecheck": "tsc --noEmit -p tsconfig.app.json",
     "test": "node ./node_modules/.bin/jest --config ./jest.test.cjs --no-cache",
     "deploy": "wrangler pages deploy dist --project-name \"my-website\""
+  },
+  "dependencies": {
+    "@emotion/is-prop-valid": "^1.4.0",
+    "framer-motion": "^12.38.0",
+    "lucide-react": "^0.577.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
@@ -35,13 +43,5 @@
     "typescript-eslint": "^8.57.1",
     "vite": "^8.0.1",
     "wrangler": "^4"
-  },
-  "dependencies": {
-    "@emotion/is-prop-valid": "^1.4.0",
-    "framer-motion": "^12.38.0",
-    "lucide-react": "^0.577.0",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4"
-  },
-  "packageManager": "yarn@4.13.0"
+  }
 }

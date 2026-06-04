@@ -25,7 +25,7 @@ describe('PricingSection', () => {
   describe('smoke', () => {
     it('renders hero heading "Queen Beds"', () => {
       render(<PricingSection />);
-      expect(screen.getByRole('heading', { name: /queen beds/i })).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: /Find Your Perfect Night's Sleep/i })).toBeInTheDocument();
     });
 
     it('renders at least 4 BedCard components', () => {
@@ -123,8 +123,7 @@ describe('PricingSection', () => {
       expect(grids.length).toBeGreaterThanOrEqual(1);
       grids.forEach((grid) => {
         expect(grid).toHaveClass('sm:grid-cols-2');
-        expect(grid).toHaveClass('lg:grid-cols-3');
-        expect(grid).toHaveClass('xl:grid-cols-4');
+        expect(grid).toHaveClass('lg:grid-cols-4');
       });
     });
   });
