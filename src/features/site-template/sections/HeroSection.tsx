@@ -43,7 +43,7 @@ const cardVariants = {
 export function HeroSection() {
   return (
     <section className="relative overflow-hidden px-4 pt-24 pb-20 sm:px-6 sm:pt-32 lg:px-8">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.14),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(14,165,233,0.12),_transparent_30%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(82,82,91,0.18),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(113,113,122,0.14),_transparent_30%)]" />
       <div className="mx-auto max-w-7xl">
         <motion.div
           className="relative flex flex-col items-center gap-10 lg:grid lg:grid-cols-2 lg:gap-14"
@@ -53,7 +53,7 @@ export function HeroSection() {
         >
           <motion.div variants={itemVariants}>
             <motion.div
-              className="mb-6 inline-flex items-center rounded-full border border-primary-100 bg-white/80 px-4 py-2 text-sm font-medium text-primary-700 shadow-sm backdrop-blur"
+              className="mb-6 inline-flex items-center rounded-full border border-zinc-200 bg-white/80 px-4 py-2 text-sm font-medium text-zinc-700 shadow-sm backdrop-blur"
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -70,7 +70,7 @@ export function HeroSection() {
             >
               Build polished sites
               <motion.span
-                className="text-primary-600"
+                className="text-zinc-800"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
@@ -89,7 +89,7 @@ export function HeroSection() {
             <motion.div className="flex flex-col gap-4 sm:flex-row" variants={itemVariants}>
               <motion.button
                 onClick={() => scrollToSection('start')}
-                className="inline-flex items-center justify-center rounded-full bg-primary-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg transition-all hover:bg-primary-700 hover:shadow-xl sm:px-8 sm:py-4 sm:text-base"
+                className="inline-flex items-center justify-center rounded-full bg-zinc-900 px-6 py-3.5 text-sm font-semibold text-white shadow-lg transition-all hover:bg-zinc-800 hover:shadow-xl sm:px-8 sm:py-4 sm:text-base"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -116,7 +116,7 @@ export function HeroSection() {
             >
               {heroHighlights.map((item) => (
                 <div key={item} className="flex items-start gap-3 text-sm text-gray-600 sm:text-base">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary-600" />
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-zinc-700" />
                   <span>{item}</span>
                 </div>
               ))}
@@ -130,7 +130,7 @@ export function HeroSection() {
               initial="hidden"
               animate="visible"
             >
-              <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-primary-400 via-sky-400 to-cyan-300 opacity-90 blur-2xl" />
+              <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-zinc-600 via-zinc-700 to-zinc-800 opacity-90 blur-2xl" />
               <div className="relative overflow-hidden rounded-[2rem] border border-white/60 bg-white/85 p-5 shadow-2xl shadow-slate-300/50 backdrop-blur xl:p-6">
                 <div className="rounded-[1.5rem] border border-slate-200 bg-slate-950 p-4 text-white">
                   <div className="mb-4 flex items-center justify-between">
@@ -149,7 +149,7 @@ export function HeroSection() {
 
                       return (
                         <div key={card.title} className="rounded-2xl bg-white/5 p-4">
-                          <Icon className="h-5 w-5 text-primary-300" />
+                          <Icon className="h-5 w-5 text-zinc-400" />
                           <p className="mt-4 text-sm font-medium text-white">{card.title}</p>
                           <p className="mt-2 text-sm text-slate-300">{card.description}</p>
                         </div>

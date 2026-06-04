@@ -9,19 +9,19 @@ import { scrollToSection, scrollToTop } from '../../../shared/lib/scroll';
 function getNavLinkClass(activeSection: string, sectionId: string, isMobile = false): string {
   if (sectionId === 'start') {
     return activeSection === 'start'
-      ? 'bg-primary-700 text-white px-5 py-2.5 rounded-full hover:bg-primary-800 transition-colors font-medium'
-      : 'bg-primary-600 text-white px-5 py-2.5 rounded-full hover:bg-primary-700 transition-colors font-medium';
+      ? 'bg-zinc-800 text-white px-5 py-2.5 rounded-full hover:bg-zinc-700 transition-colors font-medium'
+      : 'bg-zinc-900 text-white px-5 py-2.5 rounded-full hover:bg-zinc-800 transition-colors font-medium';
   }
 
   if (isMobile) {
     return activeSection === sectionId
-      ? 'text-primary-600 font-semibold transition-colors'
-      : 'text-gray-700 hover:text-primary-600 transition-colors font-medium';
+      ? 'text-zinc-900 font-semibold transition-colors'
+      : 'text-gray-700 hover:text-zinc-900 transition-colors font-medium';
   }
 
   return activeSection === sectionId
-    ? 'text-primary-600 border-b-2 border-primary-600 pb-1 transition-colors font-medium'
-    : 'text-gray-700 hover:text-primary-600 transition-colors font-medium';
+    ? 'text-zinc-900 border-b-2 border-zinc-900 pb-1 transition-colors font-medium'
+    : 'text-gray-700 hover:text-zinc-900 transition-colors font-medium';
 }
 
 export function HeaderSection() {
@@ -104,7 +104,7 @@ export function HeaderSection() {
               className="flex cursor-pointer items-center space-x-3 transition-opacity hover:opacity-80"
               aria-label="Scroll to top"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-primary-600 text-white shadow-lg shadow-primary-200/60">
+              <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-zinc-900 text-white shadow-lg shadow-zinc-950/20">
                 <Sparkles className="h-5 w-5" />
               </div>
               <div className="text-left">
@@ -182,7 +182,7 @@ export function HeaderSection() {
                     ))}
                   </div>
 
-                  <div className="mt-8 rounded-2xl border border-primary-100 bg-primary-50 p-5">
+                  <div className="mt-8 rounded-2xl border border-zinc-200 bg-zinc-50 p-5">
                     <p className="text-sm font-semibold text-gray-900">Ready to customize</p>
                     <p className="mt-2 text-sm leading-relaxed text-gray-600">
                       Swap in your content, connect your forms, and replace the starter sections with the exact experience you need.

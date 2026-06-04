@@ -74,7 +74,7 @@ export function ShowcaseSection() {
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.45, delay: 0.2 + index * 0.1 }}
                 >
-                  <Icon className="h-5 w-5 text-primary-300" />
+                  <Icon className="h-5 w-5 text-zinc-400" />
                   <p className="mt-4 text-xs uppercase tracking-[0.25em] text-slate-400">{item.label}</p>
                   <p className="mt-2 text-lg font-semibold text-white">{item.value}</p>
                 </motion.div>

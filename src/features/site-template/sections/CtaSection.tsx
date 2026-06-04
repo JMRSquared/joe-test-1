@@ -9,7 +9,7 @@ export function CtaSection() {
     <section id="start" className="px-4 py-20 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <motion.div
-          className="overflow-hidden rounded-[2rem] border border-primary-100 bg-gradient-to-br from-primary-600 via-sky-600 to-cyan-500 px-6 py-10 text-white shadow-2xl shadow-primary-200/40 sm:px-10 lg:px-12"
+          className="overflow-hidden rounded-[2rem] border border-zinc-200 bg-gradient-to-br from-zinc-800 via-zinc-900 to-black px-6 py-10 text-white shadow-2xl shadow-zinc-950/20 sm:px-10 lg:px-12"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-120px' }}

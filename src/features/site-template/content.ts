@@ -40,6 +40,7 @@ export type ShowcaseStat = {
 export const navigationSections: NavigationSection[] = [
   { id: 'features', label: 'Features' },
   { id: 'showcase', label: 'Showcase' },
+  { id: 'pricing', label: 'Pricing' },
   { id: 'start', label: 'Start Here' },
 ];
 

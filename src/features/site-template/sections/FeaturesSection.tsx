@@ -30,12 +30,12 @@ export function FeaturesSection() {
             return (
               <motion.div
                 key={feature.title}
-                className="group rounded-3xl border border-slate-200 bg-white/80 p-6 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-xl"
+                className="group rounded-3xl border border-slate-200 bg-white/80 p-6 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-zinc-200 hover:shadow-xl"
                 initial={{ opacity: 0, y: 24 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.45, delay: index * 0.08 }}
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-50 text-primary-600 transition-colors group-hover:bg-primary-600 group-hover:text-white">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-zinc-100 text-zinc-900 transition-colors group-hover:bg-zinc-900 group-hover:text-white">
                   <Icon className="h-5 w-5" />
                 </div>
                 <h3 className="mt-5 text-xl font-semibold text-slate-900">{feature.title}</h3>

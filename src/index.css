@@ -4,7 +4,7 @@
 
 @layer components {
   .section-eyebrow {
-    @apply text-sm font-semibold uppercase tracking-[0.25em] text-primary-600;
+    @apply text-sm font-semibold uppercase tracking-[0.25em] text-zinc-600;
   }
 
   .section-title {
@@ -31,7 +31,7 @@
     font-family: 'Inter', system-ui, sans-serif;
     overflow-x: hidden;
     background:
-      radial-gradient(circle at top left, rgba(59, 130, 246, 0.08), transparent 28%),
+      radial-gradient(circle at top left, rgba(71, 85, 105, 0.08), transparent 28%),
       linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
     color: #0f172a;
     -webkit-font-smoothing: antialiased;
@@ -43,7 +43,7 @@
   }
 
   ::selection {
-    background: rgba(59, 130, 246, 0.18);
+    background: rgba(71, 85, 105, 0.15);
     color: #0f172a;
   }
 
