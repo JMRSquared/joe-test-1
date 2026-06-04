@@ -18,6 +18,8 @@ jobs:
         run: yarn install --immutable
       - name: Build website
         run: yarn build
+      - name: Ensure Cloudflare Pages project exists
+        run: npx wrangler pages project create my-website --production-branch main || true
       - name: Deploy to Cloudflare Pages
         run: yarn deploy
         env:
