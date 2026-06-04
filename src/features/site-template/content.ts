@@ -37,6 +37,102 @@ export type ShowcaseStat = {
   icon: LucideIcon;
 };
 
+export type BedTag = 'Best Seller' | 'New' | 'Sale' | 'Editor Pick';
+
+export type BedListing = {
+  id: string;
+  name: string;
+  subtitle: string;
+  imageUrl: string;
+  basePrice: number;
+  tag: BedTag;
+  rating: number;
+  reviewCount: number;
+};
+
+export const BED_LISTINGS: BedListing[] = [
+  {
+    id: 'cloud-support-queen',
+    name: 'CloudSupport Queen',
+    subtitle: 'Memory foam comfort with ventilated airflow',
+    imageUrl: 'https://picsum.photos/seed/bed-1/600/480',
+    basePrice: 999,
+    tag: 'Best Seller',
+    rating: 4.8,
+    reviewCount: 312,
+  },
+  {
+    id: 'spinal-align-pro',
+    name: 'SpinalAlign Pro',
+    subtitle: 'Targeted lumbar support for restorative sleep',
+    imageUrl: 'https://picsum.photos/seed/bed-2/600/480',
+    basePrice: 1399,
+    tag: 'Editor Pick',
+    rating: 4.9,
+    reviewCount: 204,
+  },
+  {
+    id: 'heritage-oak-queen',
+    name: 'Heritage Oak Queen',
+    subtitle: 'Solid oak frame with hand-stitched upholstery',
+    imageUrl: 'https://picsum.photos/seed/bed-3/600/480',
+    basePrice: 2299,
+    tag: 'New',
+    rating: 4.7,
+    reviewCount: 89,
+  },
+  {
+    id: 'plush-zone-queen',
+    name: 'PlushZone Queen',
+    subtitle: 'Euro-top pillow design for deep cushioning',
+    imageUrl: 'https://picsum.photos/seed/bed-4/600/480',
+    basePrice: 799,
+    tag: 'Sale',
+    rating: 4.5,
+    reviewCount: 156,
+  },
+  {
+    id: 'airflow-cool-queen',
+    name: 'Airflow Cool Queen',
+    subtitle: 'Gel-infused foam keeps you temperature neutral',
+    imageUrl: 'https://picsum.photos/seed/bed-5/600/480',
+    basePrice: 1199,
+    tag: 'Best Seller',
+    rating: 4.6,
+    reviewCount: 271,
+  },
+  {
+    id: 'zen-nest-queen',
+    name: 'ZenNest Queen',
+    subtitle: 'Organic latex with natural cotton cover',
+    imageUrl: 'https://picsum.photos/seed/bed-6/600/480',
+    basePrice: 1699,
+    tag: 'New',
+    rating: 4.8,
+    reviewCount: 63,
+  },
+  {
+    id: 'ergo-balance-queen',
+    name: 'ErgoBalance Queen',
+    subtitle: 'Adjustable-firmness zones for couples',
+    imageUrl: 'https://picsum.photos/seed/bed-7/600/480',
+    basePrice: 1599,
+    tag: 'Editor Pick',
+    rating: 4.9,
+    reviewCount: 198,
+  },
+  {
+    id: 'luxe-hybrid-queen',
+    name: 'Luxe Hybrid Queen',
+    subtitle: 'Pocket coil + foam for premium support',
+    imageUrl: 'https://picsum.photos/seed/bed-8/600/480',
+    basePrice: 2099,
+    tag: 'Sale',
+    rating: 4.7,
+    reviewCount: 47,
+  },
+];
+
 export const navigationSections: NavigationSection[] = [
   { id: 'features', label: 'Features' },
   { id: 'showcase', label: 'Showcase' },
