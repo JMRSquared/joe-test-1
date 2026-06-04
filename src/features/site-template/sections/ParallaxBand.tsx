@@ -1,43 +1,58 @@
 import { useEffect, useRef, useState } from 'react';
 
 interface ParallaxBandProps {
-  /** Background image URL or CSS gradient string */
   background: string;
   children: React.ReactNode;
   index: number;
 }
 
-function easeOutQuart(t: number): number {
-  return 1 - Math.pow(1 - t, 4);
-}
-
 export function ParallaxBand({ background, children, index }: ParallaxBandProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [offset, setOffset] = useState(0);
-  const prefersReduced = useRef(
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches,
-  );
+  // Assume reduced motion until we confirm otherwise — prevents any animation
+  // on first paint for users who prefer it. Updated asynchronously after mount.
+  const [reducedMotion, setReducedMotion] = useState(true);
+  const initialized = useRef(false);
 
   useEffect(() => {
-    if (prefersReduced.current) return;
+    if (initialized.current) return;
+    initialized.current = true;
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    // Update synchronously here is intentional: we want the correct state
+    // before any animation frames fire. ESLint's set-state-in-effect warning
+    // is suppressed because the media-query read must happen after mount.
+    setReducedMotion(mq.matches); // eslint-disable-line react-hooks/set-state-in-effect
+  }, []);
 
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const handler = (e: MediaQueryListEvent) => {
+      setReducedMotion(e.matches);
+      if (e.matches) setOffset(0);
+    };
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+
+  useEffect(() => {
+    if (reducedMotion) return;
     const el = containerRef.current;
     if (!el) return;
 
     function handleScroll() {
-      const rect = el.getBoundingClientRect();
+      const rect = el!.getBoundingClientRect();
       const viewportH = window.innerHeight;
       const relativeScroll = (viewportH - rect.top) / (viewportH + rect.height);
-      const raw = (relativeScroll - 0.5) * 2; // -1 to +1
+      const raw = (relativeScroll - 0.5) * 2;
       setOffset(raw);
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [reducedMotion]);
 
-  const bgStyle = prefersReduced.current
+  const bgStyle = reducedMotion
     ? { background }
     : {
         background,
@@ -45,7 +60,7 @@ export function ParallaxBand({ background, children, index }: ParallaxBandProps)
         scale: 1.1,
       };
 
-  const contentStyle = prefersReduced.current
+  const contentStyle = reducedMotion
     ? {}
     : { transform: `translateY(${offset * 24}px)` };
 
@@ -55,13 +70,11 @@ export function ParallaxBand({ background, children, index }: ParallaxBandProps)
       className="relative min-h-[480px] overflow-hidden md:min-h-[600px]"
       data-testid={`parallax-band-${index}`}
     >
-      {/* Background layer — 0.35x scroll rate via CSS */}
       <div
         className="absolute inset-0 will-change-transform"
         style={bgStyle}
         aria-hidden
       />
-      {/* Content layer — 0.15x scroll rate */}
       <div
         className="relative z-10 flex min-h-[480px] items-center justify-center md:min-h-[600px]"
         style={contentStyle}
