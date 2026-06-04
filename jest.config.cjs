@@ -1,1 +1,13 @@
-/private/tmp/123/joe-test-1.bead-joe-test-1-08z.3/jest.config.cjs
+ 
+'use strict';
+
+module.exports = {
+  transform: {
+    '^.+\\.tsx?$': '<rootDir>/jest.transform.cjs',
+  },
+  testEnvironment: 'jsdom',
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+  },
+};

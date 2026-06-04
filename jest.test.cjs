@@ -1,4 +1,3 @@
- 
 'use strict';
 module.exports = {
   transform: { '^.+\\.tsx?$': require.resolve('./jest.transform.cjs') },
